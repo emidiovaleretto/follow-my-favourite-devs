@@ -16,7 +16,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 1.6rem;
     color: var(--text-color);
-    background-color: #E3DFF8;
+    background-color: #eeeeee;
 }
 
 a {
@@ -55,6 +55,39 @@ img {
     gap: 6rem;
 }
 
+header h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+#app header form {
+    display: flex;
+}
+
+.search input,
+.add-favourite {
+    padding: 0.8rem 1.2rem;
+    outline-color: var(--primary-color);
+}
+
+.search input {
+    background-color: #ffffff;
+    border: .1rem solid #CCC;
+    border-radius: 0.4rem 0 0 0.4rem;
+}
+
+.add-favourite {
+    border: none;
+    border-radius: 0 0.4rem 0.4rem 0;
+    transition: filter .1s ease-in;
+    background-color: var(--primary-color);
+}
+
+.add-favourite:hover {
+    cursor: pointer;
+    filter: brightness(1.1)
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -64,26 +97,48 @@ table {
     box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, .3);
 }
 
-table thead {
-    padding: 2rem;
+table * {
+    font-size: 1.4rem;
+}
+
+table th:first-child {
+    border-top-left-radius: 0.4rem;
+}
+
+table th:last-child {
+    border-top-right-radius: 0.4rem;
+}
+
+
+table th {
+    text-align: left;
+    padding: 1.5rem;
     background-color: var(--primary-color);
 }
 
-table tr {
-    padding: 3.2rem;
+table td {
+    padding: 1.5rem;
 }
 
 table tr:nth-child(even) {
-    background-color: #d1d1d1;
+    background-color: #ddd;
 }
 
 .github-user {
     display: flex;
-    gap: 0.8rem;
+    align-items: center;
+    gap: 1rem;
 }
 
 .picture-profile {
     width: 4.8rem;
     height: 4.8rem;
+    object-fit: cover;
     border-radius: 50%;
+}
+
+td .remove {
+    color: red;
+    background-color: transparent;
+    border: none;
 }
