@@ -16,8 +16,8 @@
             <header>
                 <h1>Github favourites</h1>
                 <form action="">
-                    <label for="github-user">Github user</label>
-                    <input type="text" name="github-user" id="github-user">
+                    <label class="sr-only" for="github-user">Github user</label>
+                    <input type="text" name="github-user" id="github-user" placeholder="GitHub user">
                     <button>+</button>
                 </form>
             </header>
@@ -28,23 +28,25 @@
                             <th>User</th>
                             <th>Repositories</th>
                             <th>Followers</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>
-                                <img src="https://www.github.com/emidiovaleretto.png" alt="Github user profile picture">
+                            <td class="github-user">
+                                <img class="picture-profile" src="https://www.github.com/emidiovaleretto.png" alt="Github user profile picture">
                                 <div class="github-user-details">
-                                    <h2>Emidio Valeretto</h2>
-                                    <span>emidiovaleretto</span>
+                                    <a href="https://www.github.com/emidiovaleretto" target="_blank">
+                                        <h2>Emidio Valeretto</h2>
+                                        <span>emidiovaleretto</span>    
+                                    </a>
                                 </div>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>85</td>
-                        </tr>
-                        <tr>
-                            <td>36</td>
+                            <td class="github-repositories">85</td>
+                            <td class="github-followers">36</td>
+                            <td>
+                                <button>x</button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+
+    background-color: #F7F7F7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+#app {
+    display: grid;
+    place-content: center;
+
+    min-height: 100vh;
+}
+
+#app header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 3.2rem;
+    background-color: #ececec;
+    border-radius: 0.6rem;
+    box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, .3);
+}
+
+table thead {
+    padding: 2rem;
+    background-color: aqua;
+}
+
+table tr {
+    padding: 3.2rem;
+}
+
+table tr:nth-child(even) {
+    background-color: #d1d1d1;
+}
+
+.github-user {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.picture-profile {
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 50%;
+}
