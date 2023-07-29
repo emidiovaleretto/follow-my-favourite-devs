@@ -19,7 +19,12 @@ class Favourites {
                 followers: '120000'
 
             },
-        ]
+        ];
+    }
+
+    deleteUser(user) {
+        const filteredEntries = this.entries.filter((entry) => entry.user == user.user);
+        
     }
 }
 
@@ -41,10 +46,21 @@ export class FavouritesView extends Favourites {
                 user.name,
                 user.public_repos,
                 user.followers
-            )
+            );
 
-            this.tbody.append(row)
-        })
+            row.querySelector(".remove").onclick = () => {
+
+                const isToBeDeleted = confirm('Are you sure you wish to delete this user?');
+
+                if (isToBeDeleted) {
+                    this.deleteUser(user);
+                }
+            };
+
+            this.tbody.append(row);
+
+
+        });
     }
 
     createRow(
