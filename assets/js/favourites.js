@@ -29,6 +29,7 @@ export class Favourites {
     )
     this.entries = filteredEntries
     this.update()
+    this.saveOnLocalStorage()
   }
 }
 
@@ -41,6 +42,10 @@ export class FavouritesView extends Favourites {
     this.addGitHubUser()
   }
 
+  saveOnLocalStorage() {
+    localStorage.setItem('@github-favourites:', JSON.stringify(this.entries))
+  }
+
   addGitHubUser() {
     const form = this.app.querySelector('form')
     const input = this.app.querySelector('input')
@@ -48,13 +53,23 @@ export class FavouritesView extends Favourites {
     form.onsubmit = async (event) => {
       event.preventDefault()
 
-      const user = await GitHubUser.search(input.value)
+      try {
+        const user = await GitHubUser.search(input.value)
 
-      this.entries.push(user)
-      localStorage.setItem('@github-favourites:', JSON.stringify(this.entries))
+        if (user.user === undefined) {
+            throw new Error('User not found.')
+        }
+        this.entries = [user, ...this.entries]
+        this.update()
+        this.saveOnLocalStorage()
 
-      this.update()
-      input.value = ''
+        input.value = ''
+  
+      } catch(error) {
+        alert(error.message)
+        input.value = ''
+      }
+
     }
   }
 
