@@ -55,17 +55,20 @@ export class FavouritesView extends Favourites {
 
       try {
         const user = await GitHubUser.search(input.value)
+        const userExists = this.entries.find(entry => entry.user === user.user)
+
+        if (userExists) throw new Error('User already exists.')
 
         if (user.user === undefined) {
-            throw new Error('User not found.')
+          throw new Error('User not found.')
         }
         this.entries = [user, ...this.entries]
         this.update()
         this.saveOnLocalStorage()
 
         input.value = ''
-  
-      } catch(error) {
+
+      } catch (error) {
         alert(error.message)
         input.value = ''
       }
