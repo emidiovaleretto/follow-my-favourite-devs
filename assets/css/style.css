@@ -16,7 +16,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 1.6rem;
     color: var(--text-color);
-    background-color: #eeeeee;
+    background-color: #000000;
 }
 
 a {
@@ -44,7 +44,6 @@ img {
 #app {
     display: grid;
     place-content: center;
-
     min-height: 100vh;
 }
 
@@ -52,6 +51,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 112rem;
     gap: 6rem;
 }
 
@@ -71,34 +71,50 @@ header h1 {
 }
 
 .search input {
-    background-color: #ffffff;
-    border: .1rem solid #CCC;
-    border-radius: 0.4rem 0 0 0.4rem;
+    padding: 1.6rem;
+    color: #7C7C8A;
+    background-color: #06181C;
+    border: .1rem solid #06181C;
+    border-radius: 0.4rem;
+    width: 46.2rem;
+}
+
+i.fa-star {
+    font-size: 1.6rem;
 }
 
 .add-favourite {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-left: 0.8rem;
+    padding: 1.2rem 3.2rem;
     border: none;
-    border-radius: 0 0.4rem 0.4rem 0;
-    transition: filter .1s ease-in;
-    background-color: var(--primary-color);
+    border-radius: 0.4rem;
+    transition: all .1s ease-in;
+    background-color: #065E7C;
 }
 
 .add-favourite:hover {
     cursor: pointer;
-    filter: brightness(1.1)
+    background-color: #FFFFFF;
+    color: #065E7C;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 3.2rem;
-    background-color: #ececec;
-    border-radius: 0.6rem;
-    box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, .3);
+    margin-top: 8rem;
+    background-color: rgba(6, 22, 27, .5);
+    border-radius: 1.2rem;
 }
 
 table * {
     font-size: 1.4rem;
+    color: #E1E1E6;
 }
 
 table th:first-child {
@@ -109,19 +125,18 @@ table th:last-child {
     border-top-right-radius: 0.4rem;
 }
 
-
 table th {
     text-align: left;
-    padding: 1.5rem;
-    background-color: var(--primary-color);
+    padding: 2.4rem 4rem;
+    background-color: #092D38;
 }
 
 table td {
-    padding: 1.5rem;
+    padding: 2.4rem 4rem;
 }
 
 table tr:nth-child(even) {
-    background-color: #ddd;
+    background-color: #06181C;
 }
 
 .github-user {
@@ -138,8 +153,22 @@ table tr:nth-child(even) {
 }
 
 td .remove {
-    color: red;
+    color: #F75A68;
+    font-weight: 700;
     background-color: transparent;
     border: none;
     cursor: pointer;
+}
+
+td .remove::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 0.2rem;
+    background-color: #F75A68;
+    transition: width 0.1s ease-in;
+}
+
+td .remove:hover::after {
+    width: 100%;
 }
