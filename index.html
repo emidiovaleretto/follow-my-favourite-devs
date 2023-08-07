@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -8,18 +9,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title>My favourite Devs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>GitFav - My favourite Devs</title>
     <script type="module" src="./assets/js/main.js" defer></script>
 </head>
+
 <body>
     <div id="app">
         <main>
             <header>
-                <h1>Github favourites</h1>
+                <h1><img src="./assets/img/logo.svg" alt="Logo GitFav"></h1>
                 <form class="search" action="">
                     <label class="sr-only" for="github-user">Github user</label>
-                    <input type="text" name="github-user" id="github-user" placeholder="GitHub user">
-                    <button class="add-favourite">&plus;</button>
+                    <input type="text" name="github-user" id="github-user" placeholder="Enter the Github username you want to search">
+                    <button class="add-favourite">
+                        <i class="fa-regular fa-star"></i>Favourite
+                    </button>
                 </form>
             </header>
             <main>
@@ -29,7 +36,7 @@
                             <th>User</th>
                             <th>Repositories</th>
                             <th>Followers</th>
-                            <th></th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
@@ -38,4 +45,5 @@
         </main>
     </div>
 </body>
+
 </html>
