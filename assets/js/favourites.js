@@ -116,7 +116,7 @@ export class FavouritesView extends Favourites {
                 <td class="github-repositories">${public_repos}</td>
                 <td class="github-followers">${followers}</td>
                 <td>
-                    <button class="remove">&times;</button>
+                    <button class="remove">Remove</button>
                 </td>
             `
 
